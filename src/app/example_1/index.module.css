@@ -1,0 +1,36 @@
+.page {
+  display: grid;
+
+  min-height: 100vh;
+
+  grid-template-rows: 100px 1fr 200px;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas:
+    "header header"
+    "navigation item"
+    "navigation footer";
+}
+
+.header {
+  grid-area: header;
+
+  background-color: purple;
+}
+
+.navigation {
+  grid-area: navigation;
+
+  background-color: orange;
+}
+
+.item {
+  grid-area: item;
+
+  background-color: green;
+}
+
+.footer {
+  grid-area: footer;
+
+  background-color: blue;
+}
