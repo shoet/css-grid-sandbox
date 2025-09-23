@@ -16,7 +16,7 @@ export const ImageContainer = (
       <div
         className={clsx(
           "absolute top-0 left-0",
-          "w-[30px] h-[30px] bg-blue-300/50",
+          "bg-blue-300/50",
           "text-2xl font-bold text-white",
           "flex justify-center items-center",
         )}

@@ -1,0 +1,36 @@
+.grid {
+  display: grid;
+
+  gap: 10px;
+
+  grid-template-columns: 20% 20% auto 20%;
+  grid-template-rows: 360px 180px;
+
+  grid-template-areas:
+    "text main main side"
+    "sub1 sub1 sub2 side";
+
+  .text {
+    grid-area: text;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main {
+    grid-area: main;
+  }
+
+  .side {
+    grid-area: side;
+  }
+
+  .sub1 {
+    grid-area: sub1;
+  }
+
+  .sub2 {
+    grid-area: sub2;
+  }
+}
