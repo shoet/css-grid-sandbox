@@ -35,8 +35,7 @@ export const Card = () => {
     <div
       className={clsx(
         "w-full border border-gray-300 rounded-xl px-4 py-2",
-        "grid gap-[20px]",
-        "sm:grid-cols-[80px_1fr_80px] grid-cols-[80px_1fr]",
+        "grid gap-[20px] sm:grid-cols-[80px_1fr_80px] grid-cols-[80px_1fr]",
       )}
     >
       <div
