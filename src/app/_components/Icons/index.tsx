@@ -7,6 +7,10 @@ import {
   ShoppingCart,
   LucideIcon,
   Home,
+  Map,
+  MapPin,
+  Camera,
+  Heart,
 } from "lucide-react";
 
 function withLucideProps(Icon: LucideIcon) {
@@ -19,5 +23,13 @@ function withLucideProps(Icon: LucideIcon) {
 export const IconCopy = (props: LucideProps) => <Copy {...props} />;
 export const IconGood = (props: LucideProps) => <ThumbsUp {...props} />;
 export const IconBad = (props: LucideProps) => <ThumbsDown {...props} />;
-export const IconShoppingCart = withLucideProps(ShoppingCart);
-export const IconHome = withLucideProps(Home);
+export const IconShoppingCart = (props: LucideProps) => (
+  <ShoppingCart {...props} />
+);
+export const IconHome = (props: Omit<LucideProps, "ref">) => (
+  <Home {...props} />
+);
+export const IconMap = withLucideProps(Map);
+export const IconMapPin = withLucideProps(MapPin);
+export const IconCamera = withLucideProps(Camera);
+export const IconHeart = withLucideProps(Heart);
