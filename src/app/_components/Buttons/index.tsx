@@ -1,50 +1,39 @@
 import clsx from "clsx";
 import { IconHome, IconShoppingCart } from "../Icons";
+import Link from "next/link";
 
-export const CartButton = () => {
-  return (
-    <div className={clsx("grid justify-center")}>
-      <IconShoppingCart size={32} />
-      <span className={clsx("text-[12px]")}>カート</span>
-    </div>
-  );
-};
+type Variant = "horizontal" | "vertical";
 
-export const CartButtonWithLabel = () => {
+export const CartButton = (props: { variant?: Variant }) => {
+  const { variant = "horizontal" } = props;
   return (
-    <div
+    <button
       className={clsx(
-        "grid grid-cols-[auto_1fr] gap-4",
-        "items-center",
-        "grid-flow-col", // 横方向への自動列追加でアイコンの追加に耐える
+        variant === "horizontal"
+          ? "grid grid-cols-[auto_1fr] gap-4 items-center grid-flow-col"
+          : "grid justify-items-center",
       )}
     >
-      <IconShoppingCart size={32} />
-      <span className={clsx("text-[12px]")}>カートに入れる</span>
-    </div>
+      <IconShoppingCart size={variant === "horizontal" ? 16 : 32} />
+      <span className={clsx("text-[12px]")}>
+        {variant === "horizontal" ? "カートに入れる" : "カート"}
+      </span>
+    </button>
   );
 };
 
-export const HomeButton = () => {
+export const HomeLink = (props: { variant?: Variant }) => {
+  const { variant = "horizontal" } = props;
   return (
-    <div className={clsx("grid justify-center")}>
-      <IconHome size={32} />
-      <span className={clsx("text-[12px]")}>ホーム</span>
-    </div>
-  );
-};
-
-export const HomeButtonWithLabel = () => {
-  return (
-    <div
+    <button
       className={clsx(
-        "grid grid-cols-[auto_1fr] gap-4",
-        "items-center",
-        "grid-flow-col",
+        variant === "horizontal"
+          ? "grid grid-cols-[auto_1fr] gap-4 items-center grid-flow-col"
+          : "grid justify-items-center",
       )}
     >
-      <IconHome size={32} />
+      <IconHome size={variant === "horizontal" ? 16 : 32} />
       <span className={clsx("text-[12px]")}>ホーム</span>
-    </div>
+    </button>
   );
 };
