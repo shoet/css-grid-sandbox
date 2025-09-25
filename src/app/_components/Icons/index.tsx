@@ -11,6 +11,7 @@ import {
   MapPin,
   Camera,
   Heart,
+  Search,
 } from "lucide-react";
 
 function withLucideProps(Icon: LucideIcon) {
@@ -33,3 +34,4 @@ export const IconMap = withLucideProps(Map);
 export const IconMapPin = withLucideProps(MapPin);
 export const IconCamera = withLucideProps(Camera);
 export const IconHeart = withLucideProps(Heart);
+export const IconSearch = withLucideProps(Search);
