@@ -12,6 +12,11 @@ import {
   Camera,
   Heart,
   Search,
+  Twitter,
+  Share,
+  CircleQuestionMark,
+  Settings,
+  EllipsisVertical,
 } from "lucide-react";
 
 function withLucideProps(Icon: LucideIcon) {
@@ -35,3 +40,8 @@ export const IconMapPin = withLucideProps(MapPin);
 export const IconCamera = withLucideProps(Camera);
 export const IconHeart = withLucideProps(Heart);
 export const IconSearch = withLucideProps(Search);
+export const IconTwitter = withLucideProps(Twitter);
+export const IconShare = withLucideProps(Share);
+export const IconQuestion = withLucideProps(CircleQuestionMark);
+export const IconSettings = withLucideProps(Settings);
+export const IconMoreVertical = withLucideProps(EllipsisVertical);

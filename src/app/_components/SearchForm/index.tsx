@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { IconSearch } from "../Icons";
-import { useState } from "react";
+import { ComponentProps } from "react";
 
 export const SearchForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -29,19 +29,21 @@ export const SearchForm = () => {
   );
 };
 
-export const SearchFormButtonIn = () => {
+export const SearchFormButtonIn = (props: ComponentProps<"form">) => {
+  const { className, ...rest } = props;
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
   };
-  const [focus, setFocus] = useState(false);
   return (
     <form
       className={clsx(
         "grid grid-cols-[auto_1fr] items-center gap-1",
-        "p-2 border border-gray-300",
+        "p-2 bg-gray-100 rounded-md",
         "has-focus:outline-2 has-focus:outline-sky-500",
+        className,
       )}
       onSubmit={handleSubmit}
+      {...rest}
     >
       <button
         type="submit"
@@ -50,7 +52,11 @@ export const SearchFormButtonIn = () => {
           "flex justify-center items-center",
         )}
       >
-        <IconSearch size={20} strokeWidth={3} />
+        <IconSearch
+          className={clsx("text-gray-400")}
+          size={20}
+          strokeWidth={3}
+        />
       </button>
       <input
         placeholder="Search"
